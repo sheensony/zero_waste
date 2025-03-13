@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meal Selection</title>
+    <style>
+        
+        body {
+            font-family:'Courier New', Courier, monospace;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0; 
+            background: linear-gradient(300deg, #00bfff, #d5576a, #8dcb2a);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+        }
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+
+        }
+        
+        .menu-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+
+        .menu-box {
+            width: 100%;
+            max-width: 800px;
+            background-color: rgba(255, 254, 254, 0.281);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow-y: auto;
+            max-height: 90vh; /* Prevent overflowing */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1c00f4;
+        }
+
+        .day-section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #1c00f4;
+        }
+
+        label {
+            display: block;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #1c00f4;
+            color: white;
+            border: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+
+        #confirmation-message {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffeb3b;
+            border: 1px solid #fdd835;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="menu-container">
+        <div class="menu-box" id="menu-box">
+            <h1>Hostel Meal Selection</h1>
+            <form id="menu-form" onsubmit="return handleFormSubmit(event)">
+                <div class="day-section">
+                    <h2>Monday</h2>
+                    <label>
+                        <input type="checkbox" name="monday-breakfast"> Breakfast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="monday-lunch"> Lunch
+                    </label>
+                    <label>
+                        <input type="checkbox" name="monday-dinner"> Dinner
+                    </label>
+                </div>
+                <div class="day-section">
+                    <h2>Tuesday</h2>
+                    <label>
+                        <input type="checkbox" name="tuesday-breakfast"> Breakfast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tuesday-lunch"> Lunch
+                    </label>
+                    <label>
+                        <input type="checkbox" name="tuesday-dinner"> Dinner
+                    </label>
+                </div>
+                <div class="day-section">
+                    <h2>Wednesday</h2>
+                    <label>
+                        <input type="checkbox" name="wednesday-breakfast"> Breakfast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="wednesday-lunch"> Lunch
+                    </label>
+                    <label>
+                        <input type="checkbox" name="wednesday-dinner"> Dinner
+                    </label>
+                </div>
+                <div class="day-section">
+                    <h2>Thursday</h2>
+                    <label>
+                        <input type="checkbox" name="thursday-breakfast"> Breakfast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="thursday-lunch"> Lunch
+                    </label>
+                    <label>
+                        <input type="checkbox" name="thursday-dinner"> Dinner
+                    </label>
+                </div>
+                <div class="day-section">
+                    <h2>Friday</h2>
+                    <label>
+                        <input type="checkbox" name="friday-breakfast"> Breakfast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="friday-lunch"> Lunch
+                    </label>
+                    <label>
+                        <input type="checkbox" name="friday-dinner"> Dinner
+                    </label>
+                </div>
+                <div class="day-section">
+                    <h2>Saturday</h2>
+                    <label>
+                        <input type="checkbox" name="saturday-breakfast"> Breakfast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="saturday-lunch"> Lunch
+                    </label>
+                    <label>
+                        <input type="checkbox" name="saturday-dinner"> Dinner
+                    </label>
+                </div>
+                <div class="day-section">
+                    <h2>Sunday</h2>
+                    <label>
+                        <input type="checkbox" name="sunday-breakfast"> Breakfast
+                    </label>
+                    <label>
+                        <input type="checkbox" name="sunday-lunch"> Lunch
+                    </label>
+                    <label>
+                        <input type="checkbox" name="sunday-dinner"> Dinner
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+            <div id="confirmation-message" class="confirmation-message" style="display: none;">
+                <h2>You have already submitted!</h2>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Check if any checkbox is selected
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let isSelected = false;
+            checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    isSelected = true;
+                }
+            });
+
+            // If no checkboxes are selected, show a confirmation message
+            if (!isSelected) {
+                alert("Please select at least one meal.");
+                return false; // Prevent the form submission
+            }
+
+            // If form is valid, navigate to submit page
+            window.location.href = "submit.html";
+            return true; // Allow form submission
+        }
+    </script>
+
+</body>
+</html>

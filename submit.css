@@ -1,0 +1,78 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Courier New', Courier, monospace;
+    background: rgba(184, 198, 201, 0.174);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  background: linear-gradient(300deg, #00bfff, #d5576a, #8dcb2a);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+    
+
+.submission-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 600px;
+}
+
+.submission-box {
+    background-color: rgba(184, 198, 201, 0.286);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #ffffff; /* Green color */
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #1c00f4;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+
+.go-back-button {
+    padding: 15px 30px;
+    background-color: #1c00f4;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.go-back-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}

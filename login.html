@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <section class="login-container">
+        <div class="login-box">
+            <h1>Student Access</h1>
+            <form id="login-form" onsubmit="return validateForm(event)">
+                <label for="student-id">Student ID</label>
+                <input type="text" id="student-id" name="student-id" required placeholder="Enter your Student ID">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+                <div id="error-message" class="error-message"></div>
+	
+                <button type="submit" class="login-button">Login</button>
+
+            </form>
+
+            <p id="regis">Not registered? <a href="signup.html" class="sign-in-link">Sign Up</a></p>
+        </div>
+    </section>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission until validation
+
+            var studentId = document.getElementById('student-id').value;
+            var password = document.getElementById('password').value;
+            var errorMessage = document.getElementById('error-message');
+
+            // Clear previous error messages
+            errorMessage.innerHTML = '';
+
+            if (studentId === '' || password === '') {
+                errorMessage.innerHTML = 'Please fill in both fields.';
+                return false; // Prevent form submission
+            }
+
+            // If both fields are filled, navigate to the menu page
+            window.location.href = "menu.html";
+            return true; // Allow form submission (though we're redirecting manually)
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://www.example.com/aesthetic-hostel-food-waste.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.navibar{
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    padding-bottom: 20px;
+    
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9800;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    background: linear-gradient(300deg, #00bfff, #d5576a, #8dcb2a);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+    border-radius: 10px;
+}
+
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+.home h1 {
+    font-size: 4em;
+    margin-bottom: 20px;
+    color: #000000; 
+    font-family:'Courier New', Courier, monospace
+}
+
+.home p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.button {
+    background-color: #ff9800;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #ff5722;
+}
+
+.bottom-button {
+    position:fixed;
+    bottom: 12px;
+    right: 20px;
+    background-color: #ffc10789;
+    color: rgb(255, 255, 255);
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.bottom-button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+.about, .services, .contact {
+    background: rgba(0, 0, 0, 0.6);
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 40px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace;
+}
+#about{
+    font-family: 'Courier New', Courier, monospace;
+}
+#contact
+{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.subhead
+{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}

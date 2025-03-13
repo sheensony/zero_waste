@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+
+    <section class="form-container">
+        <div class="form-box">
+            <h1>Sign Up</h1>
+            <form id="signup-form" onsubmit="return validateSignUpForm(event)">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your Username" required>
+
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="Enter your Email" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
+
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your Password" required>
+
+                <div id="error-message" class="error-message"></div>
+
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+
+            <p id="regis">Already have an account? <a href="login.html" class="login-link">Login</a></p>
+        </div>
+    </section>
+
+    <script>
+        function validateSignUpForm(event) {
+            event.preventDefault(); // Prevent form submission until validation
+
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var errorMessage = document.getElementById('error-message');
+
+            // Clear previous error messages
+            errorMessage.innerHTML = '';
+
+            // Validate the form fields
+            if (username === '' || email === '' || password === '' || confirmPassword === '') {
+                errorMessage.innerHTML = 'Please fill in all fields.';
+                return false; // Prevent form submission
+            }
+
+            // Check if passwords match
+            if (password !== confirmPassword) {
+                errorMessage.innerHTML = 'Passwords do not match.';
+                return false; // Prevent form submission
+            }
+
+            // If validation passes, navigate to menu page
+            window.location.href = "menu.html";
+            return true; // Prevent form submission as we're manually redirecting
+        }
+    </script>
+
+</body>
+</html>

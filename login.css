@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #1c00f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(300deg, #00bfff, #d5576a, #8dcb2a);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    
+}
+
+@keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-box {
+    background-color: rgba(184, 198, 201, 0.174);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#regis
+{
+    margin-top: 20px;
+    color:#1c00f4 ;
+    font-weight: bolder;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff; /* Green color */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+input:focus {
+    border-color: #4caf50; /* Green border on focus */
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #051b9580;
+    color: rgb(255, 255, 255);
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+.sign-in-link {
+    display: block;
+    margin-top: 20px; /* Adds spacing above */
+    text-decoration: none;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.sign-in-link:hover {
+    text-decoration: underline;
+}
+
+label
+{
+    font-family: 'Courier New', Courier, monospace;
+    color: #2600ff;
+}
