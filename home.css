@@ -58,9 +58,9 @@ nav ul li a:hover {
     height: 100vh;
     flex-direction: column;
     text-align: center;
-    background: linear-gradient(300deg, #00bfff, #d5576a, #8dcb2a);
+   background: linear-gradient(300deg, #198541, #0ca19a, #04c13c);
   background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
+  animation: gradient-animation 5s ease infinite;
     border-radius: 10px;
 }
 
